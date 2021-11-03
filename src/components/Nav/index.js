@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import { Link, useHistory } from "react-router-dom";
 import "./style.css";
 
 function Nav() {
-  let history = useHistory();
+  const history = useHistory();
 
-  const viewCardPage = (id) => {
-    console.log(id);
+  const viewCardPage = () => {
     history.goBack();
+  };
+  const viewSearchPage = (e) => {
+    if (e.key === "Enter") {
+      history.push(`/search/${e.target.value}`);
+    }
   };
 
   return (
@@ -36,6 +40,15 @@ function Nav() {
         </li>
         <li>
           <Link to="/contact"> Contact </Link>
+        </li>
+        <li>
+          <input
+            type="text"
+            name="searchText"
+            onKeyPress={(e) => {
+              viewSearchPage(e);
+            }}
+          />
         </li>
       </ul>
     </div>

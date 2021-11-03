@@ -21,11 +21,9 @@ export default function Card() {
   ]);
 
   const index = useParams().id;
-  console.log(index);
   const f = cities.find((item) => {
     return item.id === Number(index);
   });
-  console.log(f);
 
   return (
     <div>

@@ -7,6 +7,8 @@ import Card from "./components/Card";
 import Cards from "./components/Cards";
 import Contact from "./components/Contact";
 import Nav from "./components/Nav";
+import Search from "./components/Search";
+import Fav from "./components/Fav";
 
 import "./App.css";
 
@@ -20,6 +22,8 @@ function App() {
         <Route exact path="/card/:id" component={Card} />
         <Route exact path="/cards" component={Cards} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/search/:target" component={Search} />
+        <Route exact path="/cards/fav" component={Fav} />
         <Route
           path="*"
           render={() => {
